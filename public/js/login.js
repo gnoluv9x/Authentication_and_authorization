@@ -8,12 +8,14 @@ $('.loginButton').on('click', ()=>{
             password: $('.passInput').val()
         }
     }).then(data =>{
-        if(data !== "Dang nhap that bai"){
+        if(data === "Dang nhap that bai"){
+            $('.userInput').val('');
+            $('.passInput').val('');
+            $('.noti').html('');
+            $('.noti').append('Sai thong tin dang nhap');
+        }else {
             setCookie('user', data.token, 30);
             window.location.href = '/home';
-        }else {
-            alert('Sai thong tin dang nhap');
-            window.location.href = '/login';
         }
     })
     .catch(err =>{

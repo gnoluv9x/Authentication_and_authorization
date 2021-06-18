@@ -6,7 +6,7 @@ $.ajax({
     if(data === "Hết hạn đăng nhập"){
         alert('Hết hạn đăng nhập');
         window.location.href = "/login";
-    }else if(data === "Da dang nhap voi quyen admin") {
+    }else if(data === "Da dang nhap voi quyen admin"){
       renderWithAdmin();
     }else if (data === "Da dang nhap voi quyen user") {
       render();

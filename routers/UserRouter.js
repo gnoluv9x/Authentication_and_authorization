@@ -25,11 +25,7 @@ UserRouter.post("/findUsername", checkUser.checkUsername, (req, res, next) => {
     res.json("This username hasnt already existed");
 });
 
-UserRouter.post(
-    "/homepage",
-    checkAu.checkCookie,
-    checkAu.checkAdminRole,
-    checkUser.checkBlacklist,
+UserRouter.post("/homepage",checkAu.checkCookie, checkAu.checkAdminRole, checkUser.checkBlacklist,
     (req, res, next) => {
         if (req.role === "admin") {
             res.json("Da dang nhap voi quyen admin");
@@ -40,28 +36,21 @@ UserRouter.post(
 );
 
 // Login page
-UserRouter.post("/login", (req, res, next) => {
-    UserModel.findOne({
-        username: req.body.username
-    })
-        .then((data) => {
-            bcrypt.compare(req.body.password, data.password, function (err, result) {
+UserRouter.post("/login", async (req, res, next) => {
+    try {
+        let data = await UserModel.findOne({username: req.body.username})
+        let crypt = await bcrypt.compare(req.body.password, data.password) 
                 // result == true
-                if (result) {
+              if(crypt){
                     let token = jwt.sign({ token: data._id }, "vulong");
-                    res.json({
-                        token: token,
-                    });
-                } else if (err) {
-                    res.json(err)
-                } else {
+                    res.json({ token: token })
+                }else{
                     res.json("Dang nhap that bai");
                 }
-            });
-        })
-        .catch((err) => {
-            res.json(err);
-        });
+    } catch (error) {
+        res.json(error)
+    }
+    
 });
 
 // check blacklist when login
