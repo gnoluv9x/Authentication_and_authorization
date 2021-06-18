@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div{
+    padding: 10px 10px;
+}
+
+button{
+    padding: 5px;
+}
+.link {
+    margin: 10px
+}
+.link a{
+    font-size: 20px;
+    padding: 10px;
+    text-decoration: none;
+}
+.link a:hover{
+    background-color: rgb(121, 121, 211, 0.5);
+}
