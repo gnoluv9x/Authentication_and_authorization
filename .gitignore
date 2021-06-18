@@ -1,4 +1,6 @@
 node_modules
 package-lock.json
-/public/js/jwt.js
-brypt.js
+jwt.js
+bcrypt.js
+cookie.js
+public/js/jwt.js
