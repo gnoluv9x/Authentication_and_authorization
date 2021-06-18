@@ -1,4 +1,4 @@
 node_modules
 package-lock.json
-thuchanh.rar
-ok.zip
+/public/js/jwt.js
+brypt.js
