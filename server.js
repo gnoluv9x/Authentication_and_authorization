@@ -5,6 +5,8 @@ const UserRouter = require('./routers/UserRouter')
 var cookieParser = require('cookie-parser')
 app.use(cookieParser());
 
+const port = process.env.PORT || 3000; 
+
 // parse application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: false }))
 // parse application/json
@@ -32,4 +34,4 @@ app.use('/changepass', (req, res) =>{
 //Use Router
 app.use('/api/user/', UserRouter)
 
-app.listen(4001, console.log(' Port Listen: 4001') )
+app.listen(port)
