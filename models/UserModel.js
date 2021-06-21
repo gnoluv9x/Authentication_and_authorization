@@ -1,12 +1,5 @@
-const mongoose = require('mongoose');
+const mongoose = require('../connectDB');
 
-// connect DB
-mongoose.connect('mongodb://localhost/First_Project', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true
-});
 
 // create Schema
 
@@ -39,3 +32,13 @@ let UserModel = mongoose.model('usermodel', UserSchema)
 
 
 module.exports = UserModel;
+
+
+// UserModel.create({
+//   username: 'Long1000', 
+//   password: '123123'
+// }).then(data=>{
+//   console.log(data);
+// }).catch(err =>{
+//   console.log(err);
+// })
