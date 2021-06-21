@@ -5,7 +5,7 @@ const UserRouter = require('./routers/UserRouter')
 var cookieParser = require('cookie-parser')
 app.use(cookieParser());
 
-const port = process.env.PORT || 3000; 
+const port = process.env.PORT || 4001; 
 
 // parse application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: false }))
