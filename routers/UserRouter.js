@@ -53,8 +53,6 @@ UserRouter.post("/login", async (req, res, next) => {
     
 });
 
-// check blacklist when login
-
 // Dang ky
 UserRouter.post("/register", (req, res, next) => {
     bcrypt.genSalt(saltRounds, function (err, salt) {

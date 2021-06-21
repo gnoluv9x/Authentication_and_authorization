@@ -5,6 +5,7 @@ $.ajax({
   .then((data) => {
     if(data === "Hết hạn đăng nhập"){
         alert('Hết hạn đăng nhập');
+        delete_cookie("user");
         window.location.href = "/login";
     }else if(data === "Da dang nhap voi quyen admin"){
       renderWithAdmin();

@@ -32,7 +32,4 @@ app.use('/changepass', (req, res) =>{
 //Use Router
 app.use('/api/user/', UserRouter)
 
-
-
-
 app.listen(4001, console.log(' Port Listen: 4001') )
