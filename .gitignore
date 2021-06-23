@@ -4,3 +4,4 @@ jwt.js
 bcrypt.js
 cookie.js
 public/js/jwt.js
+public/uploads

@@ -1,12 +1,4 @@
-const mongoose = require('mongoose');
-
-// connect DB
-mongoose.connect('mongodb://localhost/First_Project', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true
-});
+const mongoose = require('../connectDB');
 
 // create Schema
 
