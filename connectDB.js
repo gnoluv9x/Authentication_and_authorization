@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // connect DB
-mongoose.connect('mongodb+srv://vulong:vulongpt90@cluster0.utibo.mongodb.net/First_Project?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://vulong:vulong@cluster0.utibo.mongodb.net/First_Project?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,

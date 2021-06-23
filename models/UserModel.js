@@ -20,15 +20,15 @@ const UserSchema = new Schema({
 
 let UserModel = mongoose.model('usermodel', UserSchema)
 
-// UserModel.create({
-//     username: 'duc',
-//     password: '123123',
-//     role: 'user'
-// }).then(data=>{
-//     console.log(data);
-// }).catch(err=>{
-//     console.log(err);
-// })
+UserModel.create({
+    username: 'duc',
+    password: '123123',
+    role: 'user'
+}).then(data=>{
+    console.log(data);
+}).catch(err=>{
+    console.log(err);
+})
 
 
 module.exports = UserModel;
